@@ -6,9 +6,16 @@
 
     <!--IOC 是一种概念, 思想, 实现方式多种多样, DI 是当前比较流行的实现-->
 
+    <!--属性注入-->
     <bean id="user" class="com.xiaopantx.spring.entity.User">
         <property name="id" value="1"/>
         <property name="name" value="tom"/>
+    </bean>
+
+    <!--构造注入-->
+    <bean id="user2" class="com.xiaopantx.spring.entity.User">
+        <constructor-arg index="1" name="name" value="jerry" type="java.lang.String"/>
+        <constructor-arg index="0" value="2" name="id" type="java.lang.Integer"/>
     </bean>
 
     <!--bean别名定义, bean可以有多个别名,但是只能有一个id-->
