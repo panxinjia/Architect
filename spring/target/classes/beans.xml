@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--IOC 是一种概念, 思想, 实现方式多种多样, DI 是当前比较流行的实现-->
+
+    <bean id="user" class="com.xiaopantx.spring.entity.User">
+        <property name="id" value="1"/>
+        <property name="name" value="tom"/>
+    </bean>
+
+    <!--bean别名定义, bean可以有多个别名,但是只能有一个id-->
+    <alias name="user" alias="user_alias_1"/>
+    <alias name="user" alias="user_alias_2"/>
+
+
+    <!--引入外部xml配置文件-->
+    <import resource="tx.xml"/>
+</beans>
